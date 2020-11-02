@@ -8,7 +8,7 @@ R = 52; % Ohm
 E = 12; % V
 Vc = -22.5; % V
 
-u = 0.3;
+u = 15/23;
 %%
 sim_duration = 1; % sec
 sim_file_name = 'buck_boost_sim';
