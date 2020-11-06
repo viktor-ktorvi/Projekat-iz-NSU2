@@ -2,8 +2,8 @@ clc;
 close all;
 clear variables;
 %%
-out = evalc('linearizacija_simbolicki');
-clearvars -except G L R C E
+out = evalc('linearizacija_simbolicki_script');
+clearvars -except G L R C E ue x2e A B C H
 s = tf('s');
 %%
 G
@@ -46,11 +46,11 @@ margin(W)
 figure()
 step(W/(W + 1))
 
+[k_num, k_den] = tfdata(K, 'v');
 
 %% Simulacija
-
-% sim_duration = 5; % sec
-% sim_file_name = 'buck_boost_sim';
-% open_system(sim_file_name)
-% out = sim(sim_file_name);
-%
+close all;
+sim_duration = 5; % sec
+sim_file_name = 'buck_boost_sim';
+open_system(sim_file_name)
+out = sim(sim_file_name);
