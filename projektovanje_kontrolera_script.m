@@ -33,15 +33,18 @@ figure()
 margin(G)
 [w_z, gain] = zero(G)
 poles = pole(G)
-w_ogranicenje = w_z/2;
+w_ogranicenje = w_z/4;
 G_approx = zpk(-w_z, poles, gain)
 
 w1 = w_ogranicenje
-K = w1/s * G_approx^(-1)
+K = -w1/s * G_approx^(-1)
 W = minreal(K*G)
 
 figure()
 margin(W)
+
+figure()
+step(W/(W + 1))
 
 
 %% Simulacija
