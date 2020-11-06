@@ -49,8 +49,7 @@ step(W/(W + 1))
 [k_num, k_den] = tfdata(K, 'v');
 
 %% Simulacija
-close all;
-sim_duration = 5; % sec
-sim_file_name = 'buck_boost_sim';
-open_system(sim_file_name)
-out = sim(sim_file_name);
+% sim_duration = 5; % sec
+% sim_file_name = 'buck_boost_sim';
+% open_system(sim_file_name)
+% out = sim(sim_file_name);
