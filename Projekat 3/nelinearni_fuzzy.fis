@@ -1,0 +1,49 @@
+[System]
+Name='nelinearni_fuzzy'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='e'
+Range=[-1 1]
+NumMFs=3
+MF1='neg':'trapmf',[-1.9 -1.1 -0.85 0]
+MF2='nula':'trapmf',[-0.9 -0.1 0.1 0.9]
+MF3='poz':'trapmf',[0 0.85 1.1 1.9]
+
+[Input2]
+Name='ed'
+Range=[-1 1]
+NumMFs=3
+MF1='neg':'trapmf',[-1.904 -1.096 -0.8955 -0]
+MF2='nula':'trapmf',[-0.8855 -0.2144 0.2144 0.8855]
+MF3='poz':'trapmf',[0 0.8955 1.096 1.904]
+
+[Output1]
+Name='u'
+Range=[-2 2]
+NumMFs=5
+MF1='poz_mnogo':'constant',[2]
+MF2='poz_malo':'constant',[1]
+MF3='nula':'constant',[0]
+MF4='neg_malo':'constant',[-1]
+MF5='neg_mnogo':'constant',[-2]
+
+[Rules]
+1 1, 5 (1) : 1
+1 3, 3 (1) : 1
+3 1, 3 (1) : 1
+3 3, 1 (1) : 1
+1 2, 4 (1) : 1
+2 2, 3 (1) : 1
+2 3, 2 (1) : 1
+2 1, 4 (1) : 1
+3 2, 2 (1) : 1
